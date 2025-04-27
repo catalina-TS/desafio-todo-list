@@ -1,0 +1,56 @@
+*{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.input-tareas{
+    display: flex;
+    flex-direction: column;
+}
+
+#nueva-tarea{
+    width: 600px;
+    height: 30px;
+}
+
+#btn-agregar{
+    height: 30px;
+}
+
+.bloque-lista{
+padding: 20px;
+background-color: rgb(209, 210, 211);
+}
+
+.agregar-tareas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.resumen-lista{
+    display: flex;
+    flex-direction: row;
+    gap: 300px
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li{
+
+    list-style: none;
+}
+
+#lista-tareas li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  

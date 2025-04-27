@@ -10,34 +10,44 @@
 
 <body>
 
-    <h1>Todo List</h1>
+    <div class="bloque-lista">
 
-    <!-- Input y botón para crear nuevas tareas -->
-<div class="input-tareas">
-    <label for="nueva-tarea">Nueva tarea</label>
-    <input id="nueva-tarea" type="text">
-</div>
+        <h1>Todo List</h1>
+        <hr>
 
-<button id="btn-agregar">Agregar</button>
-    
-    <!-- Aquí va el resumen de tareas (contador) -->
+        <!-- Input y botón para crear nuevas tareas -->
+        <div class="agregar-tareas">
+            <div class="input-tareas">
+                <label for="nueva-tarea">Nueva tarea</label>
+                <input id="nueva-tarea" type="text">
+            </div>
+            <button id="btn-agregar">Agregar</button>
+        </div>
 
-    <div>
+        <div class="resumen-lista">
+            <!-- Aquí va el resumen de tareas (contador) -->
 
-        <p>
-            Total:
-            <span id="total-tareas">0</span>
-        </p>
-        <p>
-            Realizadas:
-            <span id="tareas-completadas">0</span>
-        </p>
+            <div>
 
+                <p>
+                    Total:
+                    <span id="total-tareas">0</span>
+                </p>
+                <p>
+                    Realizadas:
+                    <span id="tareas-completadas">0</span>
+                </p>
+
+            </div>
+
+
+            <ul id="lista-tareas"></ul>
+
+
+        </div>
     </div>
 
-    <!--Aquí va la lista (arreglo)-->
-
-    <ul id="lista-tareas"></ul>
+    </div>
 
     <script src="./assets/js/script.js"></script>
 
