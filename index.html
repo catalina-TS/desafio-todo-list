@@ -1,57 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafío Todo List</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafío Todo List</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
 
-    <div class="bloque-lista">
+  <main class="bloque-lista">
+    <header>
+      <h1>Todo List</h1>
+      <hr>
+    </header>
 
-        <h1>Todo List</h1>
-        <hr>
+    <!-- Formulario para agregar tareas -->
+    <section class="agregar-tareas">
+      <div class="input-tareas">
+        <label for="nueva-tarea">Nueva tarea</label>
+        <input id="nueva-tarea" type="text" />
+      </div>
+      <button id="btn-agregar" type="button">Agregar</button>
+    </section>
 
-        <!-- Input y botón para crear nuevas tareas -->
-        <div class="agregar-tareas">
-            <div class="input-tareas">
-                <label for="nueva-tarea">Nueva tarea</label>
-                <input id="nueva-tarea" type="text">
-            </div>
-            <button id="btn-agregar">Agregar</button>
-        </div>
+    <!-- Resumen y listado -->
+    <section class="resumen-lista">
+      <div class="contador-tareas">
+        <p>Total: <span id="total-tareas">0</span></p>
+        <p>Realizadas: <span id="tareas-completadas">0</span></p>
+      </div>
 
-        <div class="resumen-lista">
-            <!-- Aquí va el resumen de tareas (contador) -->
+      <ul id="lista-tareas">
+        <!-- Aquí se insertan los <li> dinámicamente -->
+      </ul>
+    </section>
+  </main>
 
-            <div>
-
-                <p>
-                    Total:
-                    <span id="total-tareas">0</span>
-                </p>
-                <p>
-                    Realizadas:
-                    <span id="tareas-completadas">0</span>
-                </p>
-
-            </div>
-
-
-            <ul id="lista-tareas"></ul>
-
-
-        </div>
-    </div>
-
-    </div>
-
-    <script src="./assets/js/script.js"></script>
-
-
+  <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
