@@ -1,13 +1,14 @@
-// script.js
 
-// 1) Referenciar elementos del DOM
+// Obtener elementos del DOM
+
 const inputTarea      = document.querySelector('#nueva-tarea');
 const btnAgregar      = document.querySelector('#btn-agregar');
 const listaTareas     = document.querySelector('#lista-tareas');
 const totalSpan       = document.querySelector('#total-tareas');
 const completadasSpan = document.querySelector('#tareas-completadas');
 
-// 2) Arreglo con 3 tareas iniciales
+// Arreglo con las 3 tareas iniciales
+
 let tareas = [
   { id: 1, descripcion: 'Aprender métodos de arreglos', completado: false },
   { id: 2, descripcion: 'Revisar guía de apoyo',          completado: false },
@@ -15,11 +16,13 @@ let tareas = [
 ];
 
 // 3) Función que dibuja el header, las tareas y actualiza contadores
+
 function renderizarTareas() {
   // limpiar todo
   listaTareas.innerHTML = '';
 
-  // --- Header como primer li ---
+  // Header como primer li 
+
   const header = document.createElement('li');
   header.classList.add('header-lista');
   header.innerHTML = `
@@ -28,7 +31,8 @@ function renderizarTareas() {
   `;
   listaTareas.appendChild(header);
 
-  // --- Luego cada tarea ---
+  // 
+
   for (let tarea of tareas) {
     const li = document.createElement('li');
     if (tarea.completado) li.classList.add('completada');
@@ -47,17 +51,20 @@ function renderizarTareas() {
     listaTareas.appendChild(li);
   }
 
-  // actualizar contadores
+  // Actualización de contadores
+
   totalSpan.textContent       = tareas.length;
   completadasSpan.textContent = tareas.filter(t => t.completado).length;
 }
 
-// 4) Mostrar inicial
+// Iniciar la pag con las tareas existentes
+
 renderizarTareas();
 
-// 5) Agregar nueva tarea utilizando .sort() para hallar el máximo ID
+// Agregar nuevas tareas
+
 btnAgregar.addEventListener('click', () => {
-    const descripcion = inputTarea.value.trim();
+    const descripcion = inputTarea.value();
     if (!descripcion) return;
     const ids = tareas.map(t => t.id);
     ids.sort((a, b) => a - b);
@@ -68,7 +75,9 @@ btnAgregar.addEventListener('click', () => {
     renderizarTareas();
   });
 
-// 6a) Eliminar
+
+  //Eliminar tarea al hacer click en X
+
 listaTareas.addEventListener('click', e => {
   if (e.target.classList.contains('btn-eliminar')) {
     const id = Number(e.target.dataset.id);
@@ -78,7 +87,8 @@ listaTareas.addEventListener('click', e => {
   }
 });
 
-// 6b) Completar
+// Complentar tarea con el checkbox
+
 listaTareas.addEventListener('change', e => {
   if (e.target.classList.contains('chk-completado')) {
     const id = Number(e.target.dataset.id);
