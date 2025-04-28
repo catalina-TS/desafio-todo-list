@@ -55,16 +55,18 @@ function renderizarTareas() {
 // 4) Mostrar inicial
 renderizarTareas();
 
-// 5) Agregar nueva tarea
+// 5) Agregar nueva tarea utilizando .sort() para hallar el máximo ID
 btnAgregar.addEventListener('click', () => {
-  const descripcion = inputTarea.value.trim();
-  if (!descripcion) return;
-  const ids     = tareas.map(t => t.id);
-  const nuevoId = (ids.length ? Math.max(...ids) : 0) + 1;
-  tareas.push({ id: nuevoId, descripcion, completado: false });
-  inputTarea.value = '';
-  renderizarTareas();
-});
+    const descripcion = inputTarea.value.trim();
+    if (!descripcion) return;
+    const ids = tareas.map(t => t.id);
+    ids.sort((a, b) => a - b);
+    const maxId = ids.length ? ids[ids.length - 1] : 0;
+    const nuevoId = maxId + 1;
+    tareas.push({ id: nuevoId, descripcion, completado: false });
+    inputTarea.value = '';
+    renderizarTareas();
+  });
 
 // 6a) Eliminar
 listaTareas.addEventListener('click', e => {

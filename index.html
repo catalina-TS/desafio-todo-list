@@ -8,13 +8,16 @@
 </head>
 <body>
 
+<!-- Cuadro general que contendrá la Todo List -->
+
   <main class="bloque-lista">
     <header>
       <h1>Todo List</h1>
       <hr>
     </header>
 
-    <!-- Formulario para agregar tareas -->
+    <!-- Input para agregar tareas -->
+
     <section class="agregar-tareas">
       <div class="input-tareas">
         <label for="nueva-tarea">Nueva tarea</label>
@@ -24,6 +27,7 @@
     </section>
 
     <!-- Resumen y listado -->
+
     <section class="resumen-lista">
       <div class="contador-tareas">
         <p>Total: <span id="total-tareas">0</span></p>
@@ -31,7 +35,9 @@
       </div>
 
       <ul id="lista-tareas">
-        <!-- Aquí se insertan los <li> dinámicamente -->
+
+        <!-- Aquí se irán insertando los li mediante el js-->
+
       </ul>
     </section>
   </main>
