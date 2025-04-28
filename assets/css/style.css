@@ -13,7 +13,6 @@ body {
     display: flex;
     justify-content: center;
     padding: 2rem;
-    background-color: #f5f5f5;
 }
 
 .bloque-lista {
@@ -126,11 +125,6 @@ header hr {
 
 .header-lista .tarea-desc {
     flex: 1;
-}
-
-.header-lista .tarea-acc {
-    width: 6rem;
-    text-align: center;
 }
 
 /* Columnas de cada tarea */
